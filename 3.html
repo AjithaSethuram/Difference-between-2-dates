@@ -1,0 +1,59 @@
+<html>
+<head>
+     <style>
+          body {
+            background-image: url("3.png");
+            padding: 5rem;
+          }
+          table, th, td {
+          border: 5px solid black;
+          border-collapse: collapse;
+           }
+          table.center {
+          margin-left: 150;
+          margin-right:150;
+          margin-top: 50;
+           }
+           button{
+                margin-top:15;
+           }
+     </style>
+</head>
+<body>
+     <center><h1>Difference Between Two Dates</h1></center>
+<center>
+<table class= "center" >
+<tr>
+<td> date 1:</td>
+<td><input type="date" id="d1"></td>
+</tr>
+<tr>
+<td> date 2:</td>
+<td><input type="date" id="d2"</td>
+</tr>
+</table>
+<button class= "center" >
+<input  type="button" id="button"  value="check the difference" onclick="compare()"/></button>
+<br/>
+<p id="output"></p>
+</center>
+<script>
+     function compare()
+{
+    var D1=new Date(document.getElementById('d1').value);
+         var D2=new Date(document.getElementById('d2').value);
+var res;
+         if (isNaN(D1) || isNaN(D2)){
+res = "Select Both the Dates";
+}
+else if (D2-D1 <0){
+res = "Date 1 Must be greater than Date 2";
+}
+else{
+res="The number of days are "+(D2-D1)/(1000*60*60*24);
+}
+   document.getElementById("output").innerHTML=res;
+}
+</script>
+</body>
+</html>
